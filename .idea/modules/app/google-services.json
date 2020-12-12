@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1022341353811",
+    "project_id": "examenandroidbranchbit",
+    "storage_bucket": "examenandroidbranchbit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022341353811:android:ad04340a006ea167af51a6",
+        "android_client_info": {
+          "package_name": "com.example.katia.examenandroidbranchbitapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022341353811-6ismjo067d1f9s8lul31bt5lt3r320v1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.katia.examenandroidbranchbitapp",
+            "certificate_hash": "3c71ebf57d79ffa9d6819d2317fe04ee628f8ccf"
+          }
+        },
+        {
+          "client_id": "1022341353811-t8k1lnkb39o99r0n22ooadcjrn4hm6ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuyUKG9xeZoo5nYz4glI9oi906y4mFiis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022341353811-t8k1lnkb39o99r0n22ooadcjrn4hm6ls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

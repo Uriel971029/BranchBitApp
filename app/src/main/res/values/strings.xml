@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ExamenAndroidBranchBitApp</string>
+    <string name="registro">Registro</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="registrar_cuenta">¿Aún no tienes una cuenta? Registrate aquí</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="correo">Correo</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="crear_contrasenia">Contraseña (almenos 6 caracteres)</string>
+    <string name="confirmar_contrasenia">Confirmar contraseña</string>
+    <string name="toolbar">Toolbar</string>
+    <string name="registro_exitoso">Te has registrado correctamente</string>
+    <string name="registro_error">Ocurrió un error al registrarse</string>
+    <string name="registrando">Registrando..</string>
+    <string name="login_error">Error al iniciar sesión, revise sus credenciales</string>
+    <string name="mis_colaboradores">MIS COLABORADORES</string>
+    <string name="agregar_colaborador">AGREGAR COLABORADOR</string>
+    <string name="inicio">Inicio</string>
+    <string name="nombre">Nombre:</string>
+    <string name="contacto">Contacto:</string>
+
+
+</resources>
