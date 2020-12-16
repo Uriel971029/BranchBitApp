@@ -13,12 +13,16 @@
     <string name="registro_exitoso">Te has registrado correctamente</string>
     <string name="registro_error">Ocurrió un error al registrarse</string>
     <string name="registrando">Registrando..</string>
+    <string name="cargando">Cargando..</string>
     <string name="login_error">Error al iniciar sesión, revise sus credenciales</string>
     <string name="mis_colaboradores">MIS COLABORADORES</string>
     <string name="agregar_colaborador">AGREGAR COLABORADOR</string>
     <string name="inicio">Inicio</string>
     <string name="nombre">Nombre:</string>
     <string name="contacto">Contacto:</string>
-
-
+    <string name="permisos_explicacion">Los permisos son necesarios para poder mostrar el listado de trabajadores</string>
+    <string name="informacion">Información</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="denegar">Denegar</string>
+    <string name="colaboradores">Colaboradores</string>
 </resources>

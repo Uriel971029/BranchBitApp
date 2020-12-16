@@ -25,21 +25,20 @@ class HomeInteractor {
                 }
 
                 override fun onColaboradoresObtenidosError(message: String) {
-                    TODO("Not yet implemented")
+                    mListener.onInteractorObtenerColaboradoresError()
                 }
 
                 override fun onResponseErrorServidor() {
-                    TODO("Not yet implemented")
+                    mListener.onInteractorObtenerColaboradoresError()
                 }
 
                 override fun onResponseSinConexion() {
-                    TODO("Not yet implemented")
+                    mListener.onInteractorObtenerColaboradoresError()
                 }
 
                 override fun onResponseTiempoEsperadoAgotado() {
-                    TODO("Not yet implemented")
+                    mListener.onInteractorObtenerColaboradoresError()
                 }
-
             }
         )
     }

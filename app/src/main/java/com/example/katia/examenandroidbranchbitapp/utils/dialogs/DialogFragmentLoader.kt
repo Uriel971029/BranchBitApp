@@ -32,7 +32,7 @@ class DialogFragmentLoader : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val title = arguments!!.getString("title", "Default")
+        val title = requireArguments().getString("title", "Default")
         dialog!!.setTitle(title)
     }
 }

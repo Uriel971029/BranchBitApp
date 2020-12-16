@@ -49,11 +49,9 @@ class RegistroInteractor {
             .add(user)
             .addOnSuccessListener { documentReference ->
                 mListener.onInteractorRegistroExitoso()
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
             }
             .addOnFailureListener { e ->
                 mListener.onInteractorRegistroError()
-                Log.w(TAG, "Error adding document", e)
             }
     }
 }
