@@ -16,15 +16,15 @@ class WebServices {
         const val APP_JSON = "application/json"
         const val CONTENT_TYPE_JSON = "Content-Type: application/json"
 
-        open interface GetMethods {
+        interface GetMethods {
             @GET("getFile.json?dl=0")
             fun getDataEmployees(): Call<ResponseDTO>
         }
 
-        open interface PostMethods {
+        interface PostMethods {
         }
 
-        fun createBody(params: HashMap<String, Object>): RequestBody {
+        fun createBody(params: HashMap<String, Any>): RequestBody {
             val paramsObject = JSONObject(params as Map<*, *>).toString()
             return RequestBody.create(MediaType.parse(APP_JSON), paramsObject)
         }

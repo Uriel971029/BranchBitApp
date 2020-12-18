@@ -39,8 +39,9 @@ class MapsFragment : Fragment() {
          * user has installed Google Play services and returned to the app.
          */
         val employeeDTO  = arguments?.getSerializable("employee") as EmployeeDTO
-        googleMap.addMarker(MarkerOptions().position(employeeDTO.location).title(employeeDTO.nombre))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(employeeDTO.location))
+        val location = LatLng(employeeDTO.location.latitude, employeeDTO.location.longitude)
+        googleMap.addMarker(MarkerOptions().position(location).title(employeeDTO.nombre))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
     }
 
 

@@ -2,7 +2,6 @@ package com.example.katia.examenandroidbranchbitapp.home
 
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.StrictMode
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -13,12 +12,9 @@ import com.example.katia.examenandroidbranchbitapp.R
 import com.example.katia.examenandroidbranchbitapp.home.colaboradores.AgregarColaboradorFragment
 import com.example.katia.examenandroidbranchbitapp.home.colaboradores.ColaboradoresFragment
 import com.example.katia.examenandroidbranchbitapp.home.colaboradores.MapsFragment
-import com.example.katia.examenandroidbranchbitapp.home.colaboradores.MenuFragment
 import com.example.katia.examenandroidbranchbitapp.request.dto.EmployeeDTO
 import com.example.katia.examenandroidbranchbitapp.utils.Utils
 import com.example.katia.examenandroidbranchbitapp.utils.dialogs.DialogFragmentLoader
-import com.example.katia.examenandroidbranchbitapp.utils.dialogs.DialogFragmentMessage
-import java.util.jar.Manifest
 
 
 class HomeActivity : HomeView, MenuFragment.OnHomeNavigation,

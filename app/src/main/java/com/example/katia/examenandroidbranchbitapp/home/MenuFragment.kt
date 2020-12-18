@@ -1,4 +1,4 @@
-package com.example.katia.examenandroidbranchbitapp.home.colaboradores
+package com.example.katia.examenandroidbranchbitapp.home
 
 import android.content.Context
 import android.os.Bundle

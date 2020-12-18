@@ -27,7 +27,7 @@ class LoginInteractor {
             ).addOnCompleteListener({
                 if (it.isSuccessful) {
                     Log.d(TAG, "signInWithEmail:success")
-                    val user = auth.currentUser
+//                    val user = auth.currentUser
                     mListener.onInteractorLoginExitoso()
                 } else {
                     Log.w(TAG, "signInWithEmail:failure", it.exception)

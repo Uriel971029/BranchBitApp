@@ -6,6 +6,7 @@
     <string name="iniciar_sesion">Iniciar sesión</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="correo">Correo</string>
+    <string name="correo_agregar">Correo:</string>
     <string name="contrasenia">Contraseña</string>
     <string name="crear_contrasenia">Contraseña (almenos 6 caracteres)</string>
     <string name="confirmar_contrasenia">Confirmar contraseña</string>
@@ -15,6 +16,8 @@
     <string name="registrando">Registrando..</string>
     <string name="cargando">Cargando..</string>
     <string name="login_error">Error al iniciar sesión, revise sus credenciales</string>
+    <string name="correo_invalido">El correo proporcionado no es válido</string>
+    <string name="completar_campo">Complete el campo</string>
     <string name="mis_colaboradores">MIS COLABORADORES</string>
     <string name="agregar_colaborador">AGREGAR COLABORADOR</string>
     <string name="inicio">Inicio</string>
@@ -22,6 +25,7 @@
     <string name="contacto">Contacto:</string>
     <string name="permisos_explicacion">Los permisos son necesarios para poder mostrar el listado de trabajadores</string>
     <string name="informacion">Información</string>
+    <string name="agregar">Agregar</string>
     <string name="aceptar">Aceptar</string>
     <string name="denegar">Denegar</string>
     <string name="colaboradores">Colaboradores</string>

@@ -31,12 +31,7 @@ import java.util.zip.ZipFile
 class ColaboradoresRequest(context: Context) : Callback<ResponseDTO> {
 
     private lateinit var jsonFileName: String
-    private val ID_KEY: String = "id"
-    private val LOCATION_KEY: String = "location"
-    private val NOMBRE_KEY: String = "name"
-    private val MAIL_KEY: String = "mail"
     private val FILENAME_KEY: String = "employees_data"
-    private val COMPLETE_FILENAME_KEY: String = "employees_data.zip"
     private lateinit var zipFile: File
 
     private lateinit var mListener: OnColaboradoresRequestResponse
@@ -78,9 +73,9 @@ class ColaboradoresRequest(context: Context) : Callback<ResponseDTO> {
 
         for(i in 0..(jsonArray.length() - 1)){
             val jsonObject = jsonArray.optJSONObject(i)
-            val employeeDTO = EmployeeDTO(jsonObject)
-//            employees.add(gson.fromJson(jsonObject.toString(), EmployeeDTO::class.java))
-            employees.add(employeeDTO)
+//            val employeeDTO = EmployeeDTO(jsonObject)
+//            employees.add(employeeDTO)
+            employees.add(gson.fromJson(jsonObject.toString(), EmployeeDTO::class.java))
         }
 
         mListener.onColaboradoresObtenidos(employees)

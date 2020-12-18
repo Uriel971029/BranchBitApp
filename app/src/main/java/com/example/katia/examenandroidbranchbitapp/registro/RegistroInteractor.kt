@@ -47,10 +47,10 @@ class RegistroInteractor {
         )
         db.collection("users")
             .add(user)
-            .addOnSuccessListener { documentReference ->
+            .addOnSuccessListener { _ ->
                 mListener.onInteractorRegistroExitoso()
             }
-            .addOnFailureListener { e ->
+            .addOnFailureListener { _ ->
                 mListener.onInteractorRegistroError()
             }
     }
