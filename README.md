@@ -8,4 +8,4 @@ In this App I Applied the next points:
 - Implements authentication and Cloud Storage from Firebase in order to make a back up of all of the info
 - Implements a Map from the Google API
 
-![alt text](https://raw.githubusercontent.com/Uriel971029/BranchBitApp/master/app/src/main/res/drawable/login.jpeg)
+![imagen_promocional](https://raw.githubusercontent.com/Uriel971029/BranchBitApp/master/app/src/main/res/drawable/login.jpg)
