@@ -7,3 +7,4 @@ In this App I Applied the next points:
 - Persistent Storage with Room
 - Implements authentication and Cloud Storage from Firebase in order to make a back up of all of the info
 - Implements a Map from the Google API
+
