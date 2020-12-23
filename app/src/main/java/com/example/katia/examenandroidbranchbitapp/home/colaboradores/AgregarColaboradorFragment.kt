@@ -11,10 +11,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.katia.examenandroidbranchbitapp.R
+import com.example.katia.examenandroidbranchbitapp.data.AppDatabase
 import com.example.katia.examenandroidbranchbitapp.request.dto.CoordinatesDTO
 import com.example.katia.examenandroidbranchbitapp.request.dto.EmployeeDTO
-import com.google.android.gms.maps.model.LatLng
+import com.example.katia.examenandroidbranchbitapp.utils.ContextApplication
+import com.squareup.okhttp.Dispatcher
+import kotlinx.android.synthetic.main.activity_registro.*
+import kotlinx.android.synthetic.main.agregarcolaborador_fragment.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class AgregarColaboradorFragment : Fragment() {
 
@@ -23,9 +31,14 @@ class AgregarColaboradorFragment : Fragment() {
     private lateinit var edtCorreo: EditText
     private lateinit var mLister: OnAgregarColaboradorInterface
 
+    private var campoNombre: Boolean = false
+    private var campoCorreo: Boolean = false
+
     companion object {
-        fun newInstance(): AgregarColaboradorFragment {
+        private const val LAST_ID = "last_id"
+        fun newInstance(lastId: Int): AgregarColaboradorFragment {
             val args = Bundle()
+            args.putInt(LAST_ID, lastId)
             val fragment = AgregarColaboradorFragment()
             fragment.arguments = args
             return fragment
@@ -72,10 +85,9 @@ class AgregarColaboradorFragment : Fragment() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-                validateForm()
+            override fun afterTextChanged(editable: Editable?) {
+                validateForm(activity?.currentFocus)
             }
-
 
         }
 
@@ -83,17 +95,62 @@ class AgregarColaboradorFragment : Fragment() {
         edtCorreo.addTextChangedListener(watcher)
 
         btnAgregar.setOnClickListener({
-//        recuperar db local para obtener lista y generar sig. id y agregar el elemento reciente
-//            val employeeDTO = EmployeeDTO()
-//            employeeDTO.nombre = edtNombre.text.toString()
-//            employeeDTO.correo = edtCorreo.text.toString()
-//            //generar random LatLong
-//            employeeDTO.location = generateCoordinates()
-//            mLister.onAgregarColaborador(employeeDTO)
+            val employeeDTO = EmployeeDTO(
+                arguments?.getInt(LAST_ID)?.plus(1),
+                generateRandomCoordinates(),
+                edtNombre.text.toString(),
+                edtCorreo.text.toString()
+            )
+            mLister.onAgregarColaborador(employeeDTO)
         })
     }
 
-    private fun generateCoordinates(): CoordinatesDTO {
+    /**
+     * Método para validar el completado adecuado de los datos
+     */
+    private fun validateForm(campo: View?) {
+
+        when {
+            campo == edtNombre -> {
+                when {
+                    edtNombre.text.isEmpty() -> {
+                        edtNombre.setError(getString(R.string.completar_campo))
+                        edtNombre.requestFocus()
+                        campoNombre = false
+                    }
+                    else -> {
+                        campoNombre = true
+                    }
+                }
+            }
+
+            campo == edtCorreo -> {
+                when {
+                    edtCorreo.text.isEmpty() -> {
+                        edtCorreo.setError(getString(R.string.completar_campo))
+                        edtCorreo.requestFocus()
+                        campoCorreo = false
+                    }
+                    !Patterns.EMAIL_ADDRESS.matcher(edtCorreo.text.toString()).matches() -> {
+                        edtCorreo.setError(getString(R.string.correo_invalido))
+                        edtCorreo.requestFocus()
+                        campoCorreo = false
+                    }
+                    else -> {
+                        campoCorreo = true
+                    }
+                }
+            }
+        }
+
+        if (campoNombre && campoCorreo)
+            btnAgregar.isEnabled = true
+    }
+
+    /**
+     * Método ejecutado para generar coordenas aleatorias
+     */
+    private fun generateRandomCoordinates(): CoordinatesDTO {
         val minLat = -90.00
         val maxLat = 90.00
         val latitude = minLat + (Math.random() * (maxLat - minLat + 1))
@@ -103,29 +160,4 @@ class AgregarColaboradorFragment : Fragment() {
         return CoordinatesDTO(latitude, longitude)
     }
 
-    private fun validateForm() {
-        //validar completado
-        when {
-            edtNombre.text.isEmpty() -> {
-                edtNombre.setError(getString(R.string.completar_campo))
-                edtNombre.requestFocus()
-            }
-
-            edtCorreo.text.isEmpty() -> {
-                edtCorreo.setError(getString(R.string.completar_campo))
-                edtCorreo.requestFocus()
-            }
-
-            !Patterns.EMAIL_ADDRESS.matcher(edtCorreo.text.toString()).matches() -> {
-                edtCorreo.setError(getString(R.string.correo_invalido))
-                edtCorreo.requestFocus()
-            }
-
-            else -> {
-                btnAgregar.isEnabled = true
-            }
-
-        }
-
-    }
 }

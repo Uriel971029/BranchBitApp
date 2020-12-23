@@ -1,13 +1,16 @@
 package com.example.katia.examenandroidbranchbitapp.home
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.katia.examenandroidbranchbitapp.R
+import com.example.katia.examenandroidbranchbitapp.utils.Utils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -16,7 +19,7 @@ class MenuFragment : Fragment() {
     private lateinit var btnColaboradores: Button
     private lateinit var btnAgregar: Button
     private lateinit var btnCerrar: Button
-    private lateinit var mListener : OnHomeNavigation
+    private lateinit var mListener: OnHomeNavigation
 
     companion object {
         fun newInstance(): MenuFragment {
@@ -25,11 +28,12 @@ class MenuFragment : Fragment() {
             fragment.arguments = args
             return fragment
         }
+
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if(context is OnHomeNavigation){
+        if (context is OnHomeNavigation) {
             mListener = context
         }
     }
@@ -43,15 +47,13 @@ class MenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
-
         val view: View = inflater.inflate(
             R.layout.fragment_menu,
             container,
             false
         )
-
         return view
     }
 
@@ -63,13 +65,6 @@ class MenuFragment : Fragment() {
         bindListeners()
     }
 
-    fun navigate2Fragment(fragment: Fragment) {
-        childFragmentManager.
-        beginTransaction().
-        replace(R.id.fragment_container_view, fragment).
-        addToBackStack(null).
-        commit()
-    }
 
     private fun bindListeners() {
 
@@ -86,5 +81,9 @@ class MenuFragment : Fragment() {
             activity?.finish()
         })
     }
+
+
+
+
 
 }

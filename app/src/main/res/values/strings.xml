@@ -16,17 +16,21 @@
     <string name="registrando">Registrando..</string>
     <string name="cargando">Cargando..</string>
     <string name="login_error">Error al iniciar sesión, revise sus credenciales</string>
+    <string name="error_obtener_employees">Ocurrió un error al obtener el listado de empleados</string>
     <string name="correo_invalido">El correo proporcionado no es válido</string>
     <string name="completar_campo">Complete el campo</string>
     <string name="mis_colaboradores">MIS COLABORADORES</string>
     <string name="agregar_colaborador">AGREGAR COLABORADOR</string>
+    <string name="mapa_colaboradores">MAPA DE COLABORADORES</string>
     <string name="inicio">Inicio</string>
     <string name="nombre">Nombre:</string>
     <string name="contacto">Contacto:</string>
-    <string name="permisos_explicacion">Los permisos son necesarios para poder mostrar el listado de trabajadores</string>
+    <string name="permisos_explicacion">Los permisos son necesarios para que la App funcione adecuadamente</string>
     <string name="informacion">Información</string>
+    <string name="error">Error</string>
     <string name="agregar">Agregar</string>
     <string name="aceptar">Aceptar</string>
     <string name="denegar">Denegar</string>
+    <string name="cancelar">cancelar</string>
     <string name="colaboradores">Colaboradores</string>
 </resources>

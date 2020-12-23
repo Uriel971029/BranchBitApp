@@ -43,9 +43,12 @@ class RegistroActivity : RegistroView, AppCompatActivity() {
      * Método ejecutado para configurar las características del Toolbar
      */
     private fun initVars() {
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        Utils.setToolbar(
+            this,
+            toolbar,
+            getString(R.string.registro),
+            true
+        )
         auth = Firebase.auth
         btnRegistrar.isEnabled = false
     }

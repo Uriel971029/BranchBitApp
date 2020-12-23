@@ -7,4 +7,5 @@ interface HomeView : ViewInterface {
 
     fun onColaboradoresObtenidos(employees: ArrayList<EmployeeDTO>?)
     fun onObtenerColaboresError()
+    fun onEmployeeAgregado()
 }

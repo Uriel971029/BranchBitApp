@@ -32,7 +32,7 @@ class ColaboradoresFragment : ColaboradorAdapter.OnColaboradorPressed, Fragment(
 
     fun setEmployees(list: ArrayList<EmployeeDTO>?) {
         if (list != null) {
-            if(employees.size > 0)
+            if (employees.size > 0)
                 employees.clear()
             employees.addAll(list)
             colaboradorAdapter = ColaboradorAdapter(employees)
@@ -68,7 +68,7 @@ class ColaboradoresFragment : ColaboradorAdapter.OnColaboradorPressed, Fragment(
             container,
             false
         )
-        recyclerView = view.findViewById<RecyclerView>(R.id.rv_colaboradores)
+        recyclerView = view.findViewById(R.id.rv_colaboradores)
         return view
     }
 

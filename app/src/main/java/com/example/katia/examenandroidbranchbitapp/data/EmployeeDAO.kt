@@ -8,15 +8,15 @@ import com.example.katia.examenandroidbranchbitapp.request.dto.EmployeeDTO
 
 @Dao
 interface EmployeeDAO {
-//    @Query("SELECT * FROM employee")
+    @Query("select * from employee")
     fun getAll(): List<EmployeeDTO>
 
-//    @Query("SELECT * FROM employee where id = :id")
-    fun getById(): EmployeeDTO
+    @Query("SELECT * FROM employee where id = :id")
+    fun getById(id: Int): EmployeeDTO
 
-//    @Insert()
+    @Insert
     fun insert(employeeDTO: EmployeeDTO)
 
-//    @Delete
-    fun detele()
+    @Delete
+    fun detele(employeeDTO: EmployeeDTO)
 }

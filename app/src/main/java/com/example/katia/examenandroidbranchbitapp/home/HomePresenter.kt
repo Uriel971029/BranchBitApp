@@ -6,9 +6,13 @@ class HomePresenter(private var view: HomeView, private var interactor: HomeInte
     HomeInteractor.OnHomeInteractorResponse {
 
     fun getColaboradores() {
-            view.showLoader()
-            interactor.getColaboradores(this)
+        view.showLoader()
+        interactor.getColaboradores(this)
+    }
 
+    fun addEmployee(employeeDTO: EmployeeDTO) {
+        view.showLoader()
+        interactor.addEmployee(employeeDTO, this)
     }
 
     override fun onInteractorObtenerColaboradores(employees: ArrayList<EmployeeDTO>?) {
@@ -19,6 +23,11 @@ class HomePresenter(private var view: HomeView, private var interactor: HomeInte
     override fun onInteractorObtenerColaboradoresError() {
         view.hideLoader()
         view.onObtenerColaboresError()
+    }
+
+    override fun onInteractorEmployeeAgregado() {
+        view.hideLoader()
+        view.onEmployeeAgregado()
     }
 
     override fun onResponseErrorServidor() {
@@ -32,7 +41,7 @@ class HomePresenter(private var view: HomeView, private var interactor: HomeInte
     }
 
     override fun onResponseTiempoEsperadoAgotado() {
-        view!!.hideLoader()
+        view.hideLoader()
         view.onObtenerColaboresError()
     }
 
