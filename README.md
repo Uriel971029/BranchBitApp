@@ -1,6 +1,6 @@
 # BranchBitAppExamen
 
-In this App I Applied the next points:
+This project takes in account the next points:
 - Implements MVP pattern
 - Make a connection with a server with a Retrofit Client
 - Download a File with Fuel which is a Http Client that works well with dynamics end points
